@@ -29,13 +29,12 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $codificado);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-//curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
 $response = curl_exec($curl);
 
 if ($response === false)
 {
-    // throw new Exception('Curl error: ' . curl_error($crl));
+    // throw new Exception('Curl error: ' . curl_error($curl));
     print_r('Curl error: ' . curl_error($curl));
 }
 
